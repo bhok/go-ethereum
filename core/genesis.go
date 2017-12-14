@@ -342,6 +342,20 @@ func DefaultRinkebyGenesisBlock() *Genesis {
 	}
 }
 
+
+// DefaultCosmosGenesisBlock returns the Cosmos network genesis block.
+func DefaultRinkebyGenesisBlock() *Genesis {
+	return &Genesis{
+		Config:     params.CosmosChainConfig,
+		Timestamp:  //TODO,
+		ExtraData:  hexutil.MustDecode("//TODO"),
+		GasLimit:   //TODO,
+		Difficulty: big.NewInt(1),
+		Alloc:      decodePrealloc(cosmosAllocData),
+	}
+}
+
+
 // DeveloperGenesisBlock returns the 'geth --dev' genesis block. Note, this must
 // be seeded with the
 func DeveloperGenesisBlock(period uint64, faucet common.Address) *Genesis {
