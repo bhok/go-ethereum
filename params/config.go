@@ -58,6 +58,8 @@ var (
 
 		Ethash: new(EthashConfig),
 	}
+	
+	
 
 	// RinkebyChainConfig contains the chain parameters to run a node on the Rinkeby test network.
 	RinkebyChainConfig = &ChainConfig{
@@ -74,7 +76,25 @@ var (
 		Clique: &CliqueConfig{
 			Period: 15,
 			Epoch:  30000,
-		},
+	}
+		
+		// CosmosChainConfig contains the chain parameters to run a node on the Cosmos network.
+	CosmosChainConfig = &ChainConfig{
+		ChainId:        big.NewInt(2655),
+		HomesteadBlock: big.NewInt(0),
+		DAOForkBlock:   nil,
+		DAOForkSupport: true,
+		EIP150Block:    big.NewInt(0),
+		EIP150Hash:     common.HexToHash("//TODO"),
+		EIP155Block:    big.NewInt(10),
+		EIP158Block:    big.NewInt(10),
+		ByzantiumBlock: big.NewInt(1700000),
+
+		Clique: &CliqueConfig{
+			Period: 15,  // distance in second between blocks
+			Epoch:  30000, // time to reset votes in blocks
+	},
+
 	}
 
 	// AllEthashProtocolChanges contains every protocol change (EIPs) introduced
